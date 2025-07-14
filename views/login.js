@@ -7,13 +7,13 @@ export default function Login() {
       <button type="submit">Ingresar</button>
     </form>
     <p>
-        ¿Do you have account?<p> <a href="/register" onclick="event.preventDefault(); history.pushState({}, '', '/register'); window.dispatchEvent(new Event('popstate'));">Sign in</a></p>
+      ¿Do you have an account? 
+      <a href="/register" onclick="event.preventDefault(); history.pushState({}, '', '/register'); window.dispatchEvent(new Event('popstate'));">Sign in</a>
     </p>
     <script>
       document.getElementById('loginForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log("Form send);
-
+        console.log("Form sent");
 
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -23,15 +23,15 @@ export default function Login() {
             const users = await res.json();
 
             const user = users.find(u => u.email === email && u.password === password);
-            console.log("User found);
+            console.log("User  found");
         
             if (user) {
                 localStorage.setItem('user', JSON.stringify(user));
-                console.log("Redirigiendo al dashboard");
+                console.log("Redirect to dashboard");
                 history.pushState({}, '', '/dashboard');
                 window.dispatchEvent(new Event('popstate'));
             } else {
-                alert('Credenciales inválidas');
+                alert('Invalid credentials');
             }
         } catch (err) {
             console.error("Error in the petition:", err);
@@ -40,4 +40,3 @@ export default function Login() {
     </script>
   `;
 }
-

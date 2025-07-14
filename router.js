@@ -19,14 +19,12 @@ export default async function renderView() {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // Si no estás logueado y tratás de entrar a rutas privadas
   if (!user && path !== "/login" && path !== "/register") {
     history.pushState({}, '', '/login');
     document.getElementById("app").innerHTML = await Login();
     return;
   }
 
-  // Redirigir a dashboard si estás logueado e intentás ir a login/register
   if (user && (path === "/login" || path === "/register")) {
     history.pushState({}, '', '/dashboard');
     document.getElementById("app").innerHTML = await Dashboard();
