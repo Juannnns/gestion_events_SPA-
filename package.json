@@ -1,0 +1,24 @@
+{
+  "name": "gestion_events_spa-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "lite-server",
+    "server": "json-server --watch db.json --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juannnns/gestion_events_SPA-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juannnns/gestion_events_SPA-/issues"
+  },
+  "homepage": "https://github.com/Juannnns/gestion_events_SPA-#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
